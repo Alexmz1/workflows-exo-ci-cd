@@ -22,3 +22,11 @@ jobs:
                 echo "Hello world"
             - name: "Say Coucou"
               run: echo "Coucou"
+
+    hello3:
+        needs: ["hello", "hello2"]
+        name: "Hello world 3"
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Hello world 3"
+              run: echo "Hello world 3"

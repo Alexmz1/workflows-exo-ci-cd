@@ -1,9 +1,0 @@
-app/config/packages/test/
-app/public/bundles/
-app/var/
-app/vendor/
-
-.gitignore
-*.md
-.git/
-.DS_Store
