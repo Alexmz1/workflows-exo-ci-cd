@@ -17,9 +17,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Say hello again"
+              continue-on-error: true
               run: |
                 echo "Hello world"
                 echo "Hello world"
+                exit 1
             - name: "Say Coucou"
               run: echo "Coucou"
 
