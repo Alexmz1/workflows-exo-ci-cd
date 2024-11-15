@@ -1,7 +1,9 @@
 name: "CI basics"
 
 on:
-    push: ~
+    push: 
+      paths : 
+        - ".github/workflows/ci-basics.yml"
     workflow_dispatch: ~
 
 jobs:
