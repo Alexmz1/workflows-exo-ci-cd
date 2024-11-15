@@ -1,0 +1,13 @@
+name: "CI"
+
+on:
+    push:
+        paths-ignore: "./ci-basics.yml"
+    workflow_dispatch: ~
+
+jobs:
+    deps:
+        name: "Install dependencies"
+        runs-on: ubuntu-latest
+        steps:
+            - run : ls
