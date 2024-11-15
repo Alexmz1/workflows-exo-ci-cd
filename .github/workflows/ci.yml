@@ -5,6 +5,10 @@ on:
         paths-ignore: "./ci-basics.yml"
     workflow_dispatch: ~
 
+defaults:
+    run:
+      working-directory: "./app"
+
 jobs:
     deps:
         name: "Install dependencies"
