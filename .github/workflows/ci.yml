@@ -35,10 +35,12 @@ jobs:
                 composer install --prefer-dist --no-interaction --no-progress
             - name: "Check Database healthy"
               run: nc -vz 127.0.0.1 3306
+            - name: "Create test database"
+              run: mysql -h 127.0.0.1 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS app_test;"
             - name: "Start migrations"
               run: php bin/console d:m:m
               env:
                 DATABASE_HOST: 127.0.0.1
                 DATABASE_PASSWORD: password
-                DATABASE_NAME: app
+                DATABASE_NAME: app_test
                 APP_ENV: test
