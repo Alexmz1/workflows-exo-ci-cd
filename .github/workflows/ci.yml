@@ -35,4 +35,10 @@ jobs:
                 composer install --prefer-dist --no-interaction --no-progress
             - name: "Check Database healthy"
               run: nc -vz 127.0.0.1 3306
-                
+            - name: "Start migrations"
+              run: php bin/console d:m:m
+              env:
+                DATABASE_HOST: 127.0.0.1
+                DATABASE_PASSWORD: password
+                DATABASE_NAME: app
+                APP_ENV: test
